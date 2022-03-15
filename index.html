@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    :root {
+      --pink: rgb(242, 84, 125);
+      --purple: rgb(106, 120, 209);
+    }
+
+    body {
+      height: 175px;
+      width: 600px;
+      margin: 0;
+      /* box-sizing: border-box; */
+      /* position: relative; */
+    }
+
+    section {
+      display: grid;
+      height: 100%;
+      grid-template:
+        "a b c" 80%
+        "d . e" auto / 25% 43% 32%;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: content-box;
+    }
+
+    section::before {
+      content: "";
+      margin: 15px 0;
+      border-right: 1px solid var(--pink);
+      grid-area: 1 / 1 / 2 / 3;
+    }
+    section::after {
+      content: "";
+      margin-left: 10px;
+      margin-bottom: 5px;
+      border-top: 1px solid var(--pink);
+      grid-area: 2 / 1 / 3 / 5;
+    }
+
+    .a {
+      grid-area: a;
+      border-radius: 50%;
+      position: relative;
+      height: 86.67%;
+      object-fit: cover;
+      align-self: center;
+      justify-self: center;
+      margin: 10px;
+    }
+
+    .b {
+      grid-area: b;
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      height: 60%;
+      align-self: center;
+      margin-left: 10px;
+      justify-content: space-around;
+    }
+
+    .b > h3 {
+      font-size: 18px;
+      margin: 2px 0;
+    }
+
+    .b > p {
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .c {
+      grid-area: c;
+      display: grid;
+      height: 50%;
+      width: 75%;
+      grid-template-columns: 10% 90%;
+      grid-template-rows: repeat(auto-fill, 1fr);
+      align-content: space-around;
+      align-self: center;
+      margin-left: 25px;
+      gap: 0 10px;
+    }
+
+    .c > img {
+      background-color: var(--pink);
+      width: 12px;
+      grid-column: 1;
+    }
+
+    .c > a {
+      grid-column: 2;
+      font-size: 12px;
+      color: black;
+      text-decoration: none;
+    }
+
+    .e {
+      grid-area: e;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+    }
+
+    .e a {
+      /* display: flex; */
+      /* align-content: center; */
+      /* justify-content: center; */
+      background-color: var(--purple);
+      margin-top: 10px;
+    }
+    .e img {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <img class="a" style="aspect-ratio: 1" src="https://arimgibson.com/photos/general/profile-picture-rect.jpg" alt="Picture of Ari Gibson" />
+    <div class="b">
+      <h3>Ari M. Gibson</h3>
+      <p>Student at MSU Denver</p>
+      <p>LGBTQ+ Advocate | Puksta Scholar</p>
+      <p>They/Them/Theirs</p>
+    </div>
+    <div class="c">
+      <img src="https://arimgibson.com/photos/general/phone-icon.png" />
+      <a href="tel:(720) 772-8236">(720) 772-8236 <i>(cell)</i></a>
+      <img src="https://arimgibson.com/photos/general/email-icon.png" />
+      <a href="mailto:arimgibson.com">arimgibson@gmail.com</a>
+      <img src="https://arimgibson.com/photos/general/link-icon.png" />
+      <a href="https://arimgibson.com">arimgibson.com</a>
+    </div>
+    <div class="e">
+      <a href="https://arimgibson.com/add">
+        <img alt="add as contact" src="https://arimgibson.com/photos/general/add-contact-icon.png" />
+      </a>
+    </div>
+  </section>
+</body>
